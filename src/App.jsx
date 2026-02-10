@@ -1,7 +1,8 @@
 import { Provider } from "react-redux";
 import { useState, useEffect } from "react";
 import { store } from "./app/store";
-import Todo from "./components/todo";
+import Todo from "./components/Todo";
+
 import "./App.css";
 
 function App() {
