@@ -1,0 +1,94 @@
+*{
+  padding:0;
+}
+
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  /* 🌞 Light theme */
+  --bg-color: #e9d1e5;
+  --text-color: rgba(59, 6, 232, 0.87);
+  --button-bg: #e1120f;
+  --card-bg: #ffffff;
+
+  background-color: var(--bg-color);
+  color: var(--text-color);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 🌙 Dark theme overrides */
+[data-theme="dark"] {
+  --bg-color: #1a1a2e;
+  --text-color: #eaeaea;
+  --button-bg: #ff4d4d;
+  --card-bg: #2a2a40;
+}
+
+body {
+  margin: 0;
+  min-width: 350px;
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+
+
+h1 {
+  font-size: 2.8em;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+a {
+  font-weight: 500;
+  color: #151dc1;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #139554;
+}
+
+button {
+  border-radius: 10px;
+  border: none;
+  padding: 0.6em 1.4em;
+  
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+
+  background-color: var(--button-bg);
+  color: white;
+
+  cursor: pointer;
+  transition: background-color 0.25s ease, transform 0.15s ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+}
+
+/* =======================
+   TODO CARD
+   ======================= */
+
+.todo-container {
+  background-color: var(--card-bg);
+  padding: 50px;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
