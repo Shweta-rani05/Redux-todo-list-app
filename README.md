@@ -46,7 +46,7 @@ https://github.com/Shweta-rani05/Redux-todo-list-app
 
 | 🌞 Light Mode | 🌙 Dark Mode |
 |--------------|-------------|
-| ![Light Mode](src/assets/dark.png) | ![Dark Mode](src/assets/dark.png) |
+| ![Light Mode](src/assets/dark.png) | ![Dark Mode](src/assets/light.png) |
 
 
 Project Structure :
