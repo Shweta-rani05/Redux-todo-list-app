@@ -1,29 +1,43 @@
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import AddForm from "./AddForm";
-import { useDispatch} from "react-redux";
-import { deleteTodo,markAsDone } from "../features/todo/todoSlice";
+import { deleteTodo, markAsDone } from "../features/todo/todoSlice";
+import {
+  playDoneSound,
+  playDeleteSound,
+  playCelebrateSound,
+} from "../utils/audio";
 
+export default function Todo() {
+  const todos = useSelector((state) => state.todos);
+  const dispatch = useDispatch();
 
-export default function Todo(){
-    const todos = useSelector((state) => state.todos );
-    console.log(todos );
-    const dispatch = useDispatch();
+  // 🗑 DELETE HANDLER → celebration ONLY if last task
+  const clickHandler = (id) => {
+    // check BEFORE deleting
+    const isLastTask = todos.length === 1;
 
-    const clickHandler = (id) =>{
-        console.log("delete",id);
-        dispatch(deleteTodo(id));
-    };
+    dispatch(deleteTodo(id));
+    playDeleteSound();
 
-    const doneHandler = (id) => {
-    dispatch(markAsDone(id));
+    if (isLastTask) {
+      setTimeout(() => {
+        playCelebrateSound(); // 🎉 ONLY here
+      }, 200);
+    }
   };
 
-     
-    return (
-        <>
-        <AddForm/>
-        <h1>Todo List App </h1>
-        <ul>
+  // ✓ DONE HANDLER → NO celebration
+  const doneHandler = (id) => {
+    dispatch(markAsDone(id));
+    playDoneSound(); // only done sound
+  };
+
+  return (
+    <>
+      <AddForm />
+      <h1>Todo List App</h1>
+
+      <ul>
         {todos.map((todo) => (
           <li
             key={todo.id}
@@ -42,20 +56,15 @@ export default function Todo(){
 
             <div style={{ display: "flex", gap: "8px" }}>
               {!todo.isDone && (
-                <button onClick={() => doneHandler(todo.id)}>
-                   ✓
-                </button>
+                <button onClick={() => doneHandler(todo.id)}>✓</button>
               )}
-              <button onClick={() => clickHandler(todo.id)}>
-                 🗑️
-              </button>
+              <button onClick={() => clickHandler(todo.id)}>🗑️</button>
             </div>
           </li>
         ))}
       </ul>
-        </>
-    );
+    </>
+  );
 }
-
 
 
