@@ -1,16 +1,88 @@
-# React + Vite
+# 📝 Redux Todo List App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<p align="center">
+  <img src="https://img.shields.io/badge/React-18-blue?logo=react" />
+  <img src="https://img.shields.io/badge/Redux%20Toolkit-State%20Management-purple?logo=redux" />
+  <img src="https://img.shields.io/badge/Vite-Build%20Tool-yellow?logo=vite" />
+  <img src="https://img.shields.io/badge/Status-Active-success" />
+</p>
 
-Currently, two official plugins are available:
+A **modern, feature-rich Todo List application** built with **React**, **Redux Toolkit**, and **Vite**.  
+Designed to demonstrate **clean state management**, **UX feedback with sounds**, and **theme toggling**.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+🔗 **GitHub Repository**  
+https://github.com/Shweta-rani05/Redux-todo-list-app
 
-## React Compiler
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## Expanding the ESLint configuration
+## ✨ Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- ➕ Add tasks (supports **long, multi-line tasks**)
+- ✅ Mark tasks as done (✓ with sound)
+- 🗑 Delete tasks (different sound)
+- 🎉 Celebration sound when **all tasks are completed**
+- 🌞🌙 Light / Dark mode toggle
+- 🔊 Audio feedback for user actions
+- 📱 Responsive & clean UI
+- ⚛️ Powered by Redux Toolkit
+
+---
+
+
+
+## 🧠 Tech Stack
+
+| Technology       | Purpose                  |
+|------------------|--------------------------|
+| React            | UI Library               |
+| Redux Toolkit    | State Management         |
+| Vite             | Development / Build Tool |
+| CSS              | Styling & Theming        |
+| GitHub           | Version Control          |
+
+---
+
+## 📸 Screenshots
+
+### 🌞 Light Mode
+![Light Mode Screenshot](assets/light.png)
+
+### 🌙 Dark Mode
+![Dark Mode Screenshot](assets/dark.png)
+
+Project Structure :
+
+redux-todo-list-app/
+├─ assets/
+│   ├─ light.png
+│   ├─ dark.png
+│   └─ demo.gif
+├─ public/
+│   ├─ done.mp3
+│   ├─ delete.mp3
+│   └─ celebrate.mp3
+├─ src/
+│   ├─ components/
+│   │   ├─ Todo.jsx
+│   │   ├─ AddForm.jsx
+│   │   └─ Todo.css
+│   ├─ features/
+│   │   └─ todo/todoSlice.js
+│   ├─ app/store.js
+│   ├─ App.jsx
+│   └─ main.jsx
+├─ package.json
+├─ vite.config.js
+└─ README.md
+
+
+🔮 Future Enhancements : 
+
+ Persist todos using LocalStorage
+ Edit tasks
+ Task priority & categories
+ Confetti animation on completion
+ Sound mute toggle
+
+
+
